@@ -29,7 +29,10 @@ int main() {
             }
         }
     }
-    num = abs(x1-x) + abs(y1-y);
+    if((x1 - x)<0) num += -(x1-x);
+    else num+= (x1-x);
+    if((y1 - y)<0) num += -(y1-y);
+    else num+= (y1-y);
 
     printf("%d",num);
     return 0 ;
