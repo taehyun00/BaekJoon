@@ -1,14 +1,21 @@
-// Online C compiler to run C program online
-#include <stdio.h>
-
-int main() {
-    int a;
-    double b;
-    scanf("%d %lf",&a,&b);
-    double sum = 0;
-    sum = a/b;
-    
-    printf("%.1001lf",sum);
-
+#include<stdio.h>
+int main(){
+    int a,b;
+    int c=0,d=0;
+    scanf("%d %d",&a,&b);
+    if(a%b == 0){
+        printf("%d",a/b);
+        return 0;
+    }
+    else{
+        printf("%d.",a/b);
+        if(a/b != 0) a -= b*(a/b);
+        for(int i=0; i<1501; i++){
+            a*=10;
+            d = a/b;
+            printf("%d",d);
+            a = a-b*d;
+        }
+    }
     return 0;
 }
